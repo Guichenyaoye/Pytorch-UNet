@@ -21,7 +21,7 @@ def predict_img(net,
     img = torch.from_numpy(BasicDataset.preprocess(None, full_img, scale_factor, is_mask=False))
     img = img.unsqueeze(0)
     img = img.to(device=device, dtype=torch.float32)
-    print(img)
+    
 
     with torch.no_grad():
         output = net(img).cpu()
